@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Tết - Tiếng Anh Lớp 3</title>
+    <link rel="stylesheet" href="MCQstyle.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>🧧 Bài Tập Tết 🧧</h1>
+        <h2 style="font-size: 16px; color: #d32f2f; border: none; font-weight: normal;">Tiếng Anh Lớp 3 (Unit 1 - 4)</h2>
+        <p style="text-align: center; font-style: italic;">Hệ thống sẽ chọn ngẫu nhiên <strong>20 câu hỏi</strong> (bao gồm ngữ pháp và hội thoại) để bạn luyện tập.</p>
+<h2 style="font-size: 16px; color: #d32f2f; border: none; font-weight: normal;">Tiếng Anh Lớp 3 (Unit 1 - 4)</h2>
+<p style="text-align: center; font-style: italic;">Hệ thống sẽ chọn ngẫu nhiên <strong>20 câu hỏi</strong>.</p>
+
+<div style="text-align: center; margin-bottom: 20px;">
+    <input type="text" id="studentName" placeholder="Nhập tên của bạn vào đây..." 
+           style="padding: 10px; border: 2px solid #d32f2f; border-radius: 20px; width: 60%; text-align: center; font-size: 16px; outline: none;">
+</div>
+
+<form id="quizForm"></form>
+        <form id="quizForm"></form>
+
+        <button id="submitBtn" type="button" onclick="submitQuiz()">Nộp Bài Nhận Lì Xì 🧧</button>
+
+        <div id="result" style="display: none;"></div>
+
+        <div class="history-section">
+            <h2>📜 Lịch sử làm bài</h2>
+            <div id="history-list">Đang tải...</div>
+        </div>
+         <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 style="color: #d32f2f; text-align: center;">Chi Tiết Bài Làm 🧧</h2>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+    <script src="MCQscript.js"></script>
+    
+</body>
+</html>

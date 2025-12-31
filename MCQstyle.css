@@ -1,0 +1,324 @@
+/* MCQstyle.css - Full Version (Tet Theme + Music + History Table) */
+
+/* --- CẤU TRÚC CHUNG --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff8e1; /* Màu kem vàng nhạt */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    /* Hiệu ứng nền chấm bi đỏ nhạt */
+    background-image: radial-gradient(#ffcdd2 15%, transparent 16%);
+    background-size: 20px 20px;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(211, 47, 47, 0.15); /* Bóng đỏ nhẹ */
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #ffeb3b; /* Viền vàng */
+    position: relative;
+    z-index: 10;
+}
+
+/* --- TRANG TRÍ TẾT --- */
+.tet-decoration {
+    position: fixed;
+    top: 80px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 1.6;
+    z-index: 1;
+    animation: sway 3s ease-in-out infinite alternate;
+}
+@keyframes sway {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(5deg); }
+}
+.left { left: 30px; }
+.right { right: 30px; }
+
+/* --- TIÊU ĐỀ --- */
+h1 {
+    color: #d32f2f; /* Đỏ đậm */
+    border-bottom: 2px solid #ffeb3b;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: #c62828;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ef9a9a;
+    padding-bottom: 10px;
+}
+
+/* --- CÂU HỎI & LỰA CHỌN --- */
+.question {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ffe0b2;
+    background-color: #fffde7; /* Nền vàng rất nhạt */
+    border-left: 6px solid #d32f2f; /* Cạnh trái màu đỏ */
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.question:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.question p {
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #bf360c;
+    font-size: 1.1em;
+}
+
+.option {
+    margin-bottom: 8px;
+}
+
+.option label {
+    display: block;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.option label:hover {
+    background-color: #ffe082; /* Hover màu vàng */
+    border-color: #ffca28;
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #d32f2f;
+}
+
+/* --- TRẠNG THÁI ĐÚNG/SAI --- */
+.correct-answer {
+    background-color: #c8e6c9 !important; /* Xanh lá */
+    border: 1px solid #2e7d32 !important;
+    color: #1b5e20;
+    font-weight: bold;
+}
+
+.wrong-answer {
+    background-color: #ffcdd2 !important; /* Đỏ */
+    border: 1px solid #c62828 !important;
+    color: #b71c1c;
+    font-weight: bold;
+}
+
+/* --- NÚT NỘP BÀI --- */
+button#submitBtn {
+    background-color: #d32f2f;
+    color: #ffeb3b; /* Chữ vàng */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+    text-transform: uppercase;
+}
+
+button#submitBtn:hover {
+    background-color: #b71c1c;
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.4);
+}
+
+button#submitBtn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- KẾT QUẢ TỔNG --- */
+#result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- NÚT ĐIỀU KHIỂN NHẠC --- */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d32f2f;
+    color: #ffeb3b;
+    border: 2px solid #ffeb3b;
+    border-radius: 50px;
+    padding: 8px 15px;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    font-weight: bold;
+    user-select: none;
+}
+
+.music-control:hover {
+    transform: scale(1.05);
+    background-color: #b71c1c;
+}
+
+/* Hiệu ứng xoay khi nhạc đang phát */
+.music-playing #musicIcon {
+    display: inline-block;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- CỬA SỔ POPUP (MODAL) --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Nền đen mờ */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 4px solid #ffeb3b; /* Viền vàng đậm */
+    border-radius: 15px;
+    width: 95%;
+    max-width: 900px;
+    position: relative;
+    animation: slideDown 0.4s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@keyframes slideDown {
+    from {top: -100px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+/* --- GIAO DIỆN BẢNG CHI TIẾT (DẠNG KẺ KHUNG) --- */
+
+/* Bao quanh bảng để trượt ngang được trên điện thoại */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+    border: 2px solid #d32f2f; /* Viền ngoài cùng màu đỏ */
+    border-radius: 8px;
+}
+
+/* Thiết lập bảng */
+.detail-table {
+    width: 100%;
+    border-collapse: collapse; /* QUAN TRỌNG: Gộp viền lại thành 1 nét */
+    min-width: 600px; /* Đảm bảo bảng không bị co quá nhỏ */
+    font-size: 14px;
+    background-color: #fff;
+}
+
+/* Kẻ khung cho từng ô và tiêu đề */
+.detail-table th, 
+.detail-table td {
+    border: 1px solid #333; /* Đường kẻ màu đen xám rõ ràng */
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+/* Trang trí dòng tiêu đề */
+.detail-table th {
+    background-color: #d32f2f; /* Nền đỏ Tết */
+    color: #ffeb3b; /* Chữ vàng */
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Màu nền cho dòng đúng/sai */
+.row-correct { background-color: #e8f5e9; } /* Xanh nhạt */
+.row-wrong { background-color: #ffebee; } /* Đỏ nhạt */
+
+/* Trang trí text đáp án */
+.user-ans { 
+    font-weight: bold; 
+    display: block; 
+    margin-bottom: 5px; 
+}
+.correct-ans { 
+    font-weight: bold; 
+    color: #1b5e20; /* Xanh lá đậm */
+}
+.explain-text { 
+    font-style: italic; 
+    color: #b71c1c; 
+    font-size: 0.9em; 
+    display: block; 
+    margin-top: 5px; 
+    border-top: 1px dashed #999; /* Gạch đứt ngăn cách giải thích */
+    padding-top: 4px;
+}
+
+    
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 600px) {
+    .tet-decoration { display: none; }
+    .quiz-container { padding: 15px; width: 95%; }
+    .music-control { top: 10px; right: 10px; padding: 5px 10px; font-size: 12px; }
+    .modal-content { width: 95%; margin: 10% auto; padding: 10px; }
+}
+/* --- NÚT ĐÓNG (X) Ở GÓC TRÊN --- */
+.close-btn {
+    color: #d32f2f; /* Màu đỏ nổi bật */
+    position: absolute; /* Ghim chặt vào khung */
+    top: 5px; /* Cách mép trên một chút */
+    right: 20px; /* Cách mép phải */
+    font-size: 50px; /* Kích thước chữ SIÊU TO */
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1; /* Tránh bị chiếm diện tích chiều cao */
+    transition: all 0.2s;
+    z-index: 100; /* Luôn nằm trên các nội dung khác */
+}
